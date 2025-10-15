@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base tweaks */
+body {
+  @apply bg-gray-50 text-gray-900 font-sans;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}
+
+.container-responsive {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Melhorias de responsividade */
+@media (max-width: 640px) {
+  .container-responsive {
+    @apply px-3;
+  }
+}
+
+/* Garantir que o body tenha altura mínima */
+html, body, #root {
+  min-height: 100vh;
+}
+
+/* Melhorar scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 375px) {
+  .container-responsive {
+    @apply px-2;
+  }
+}
+
+/* Garantir que não haja overflow horizontal */
+body {
+  overflow-x: hidden;
+}
+
+/* Ajustes específicos para o header */
+header {
+  min-width: 0; /* Permite que o flexbox contraia */
+}
+
+/* Garantir que os elementos do header se ajustem */
+header .flex {
+  min-width: 0;
+}
+
+/* Ajustar espaçamento em telas muito pequenas */
+@media (max-width: 480px) {
+  .container-responsive {
+    @apply px-2;
+  }
+  
+  /* Reduzir ainda mais o espaçamento entre elementos */
+  header .space-x-1 {
+    gap: 0.125rem;
+  }
+}
